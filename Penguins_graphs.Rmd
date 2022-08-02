@@ -18,6 +18,9 @@ Scatter plot of body mass versus flipper length
 #----tell it that you want to give different colors for each species 
 
 ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm)) +
-  geom_point(aes(color = species), size=1)
+  geom_point(aes(color = species), size=1) +
+  facet_wrap(~island) +
+  theme_minimal() +
+  labs(x="Body Mass (g)", y="Flipper Length (mm)", title = "Cute Fluffy Penguins")
 ```
 
